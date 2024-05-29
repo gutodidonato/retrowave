@@ -1,0 +1,97 @@
+:root {
+    --neon: rgb(255, 25, 255);
+}
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: black;
+}
+
+.ruler-of-synth {
+    min-width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0);
+    margin: 0 auto;
+    overflow: hidden;
+    perspective: 1000px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.player-of-synth {
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0;
+    transform: rotateX(69deg);
+    transform-style: preserve-3d;
+    padding-top: 0px;
+    width: 90%;
+    height: 100%;
+    box-shadow: 0 0 3px #fff, 0px 0px 3px 0px #fff, 0 0 5px #fff, 0 0 10px var(--neon), 0 0 10px var(--neon);
+}
+
+.son-of-synth {
+    width: 100px;
+    height:100px;
+    background-color: rgba(255, 255, 255, 0);
+    margin: 0 auto;
+    box-shadow: 0 0 3px #fff, 0px 0px 3px 0px #fff, 0 0 5px #fff, 0 0 10px var(--neon), 0 0 10px var(--neon);
+    animation: neonGlow 1.5s infinite alternate, moveGrid 0.5s infinite linear;
+    margin-bottom: 5px;
+}
+.yoshi{
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 46%;
+        left: 50%;
+        animation: 3s yoshiRun 2s infinite linear;
+}
+
+.sun{
+    width: 33%;
+    height: 36%;
+    position: absolute;
+}
+
+
+@keyframes yoshiRun {
+    0% {
+        transform: translate(0, 0px);
+    }
+    20%{
+        transform: translate(20px, 0px);
+    }
+    40%{
+        transform: translate(-20px, 0px);
+    }
+    60% {
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes moveGrid {
+    0% { transform:  translateY(-100px); }
+    100% { transform: translateY(00px); }
+}
+
+@keyframes neonGlow {
+    0% {
+        box-shadow: 0 0 5px #fff, 0 0 10px var(--neon), 0 0 15px var(--neon), 0 0 20px var(--neon), 0 0 25px var(--neon);
+    }
+    100% {
+        box-shadow: 0 0 10px #fff, 0 0 15px var(--neon), 0 0 20px var(--neon), 0 0 25px var(--neon), 0 0 30px var(--neon);
+    }
+}
